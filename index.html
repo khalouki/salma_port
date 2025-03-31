@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salma Souneini - Software Engineering Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Salma Souneini, a software engineering student passionate about technological challenges.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#3b82f6',
+                            dark: '#2563eb',
+                            light: '#60a5fa',
+                        },
+                        secondary: {
+                            DEFAULT: '#f3f4f6',
+                            dark: '#1f2937',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-primary-DEFAULT">Salma Souneini</h1>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about"
+                    class="text-gray-600 hover:text-primary-DEFAULT dark:text-gray-300 dark:hover:text-primary-DEFAULT transition">About</a>
+                <a href="#education"
+                    class="text-gray-600 hover:text-primary-DEFAULT dark:text-gray-300 dark:hover:text-primary-DEFAULT transition">Education</a>
+                <a href="#experience"
+                    class="text-gray-600 hover:text-primary-DEFAULT dark:text-gray-300 dark:hover:text-primary-DEFAULT transition">Experience</a>
+                <a href="#skills"
+                    class="text-gray-600 hover:text-primary-DEFAULT dark:text-gray-300 dark:hover:text-primary-DEFAULT transition">Skills</a>
+                <a href="#contact"
+                    class="text-gray-600 hover:text-primary-DEFAULT dark:text-gray-300 dark:hover:text-primary-DEFAULT transition">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="text-gray-600 dark:text-gray-300">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 dark:text-gray-300">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 shadow-md">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#about"
+                    class="text-gray-600 hover:text-primary-DEFAULT dark:text-gray-300 dark:hover:text-primary-DEFAULT transition">About</a>
+                <a href="#education"
+                    class="text-gray-600 hover:text-primary-DEFAULT dark:text-gray-300 dark:hover:text-primary-DEFAULT transition">Education</a>
+                <a href="#experience"
+                    class="text-gray-600 hover:text-primary-DEFAULT dark:text-gray-300 dark:hover:text-primary-DEFAULT transition">Experience</a>
+                <a href="#skills"
+                    class="text-gray-600 hover:text-primary-DEFAULT dark:text-gray-300 dark:hover:text-primary-DEFAULT transition">Skills</a>
+                <a href="#contact"
+                    class="text-gray-600 hover:text-primary-DEFAULT dark:text-gray-300 dark:hover:text-primary-DEFAULT transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Round Image -->
+    <section
+        class="pt-32 pb-20 px-4 bg-gradient-to-br from-primary-DEFAULT/5 to-blue-400/5 dark:from-primary-DEFAULT/10 dark:to-blue-400/10">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <!-- Profile Image (Left) -->
+                <div class="w-full md:w-1/3 flex justify-center md:justify-start animate__animated animate__fadeIn">
+                    <div
+                        class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl">
+                        <!-- Replace with actual image URL -->
+                        <img src="https://placehold.co/400x400/3b82f6/FFFFFF/png?text=S" alt="Salma Souneini"
+                            class="w-full h-full object-cover">
+                        <!-- Decorative circle -->
+                        <div
+                            class="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-primary-light/20 dark:bg-primary-light/10 -z-10">
+                        </div>
+                        <!-- Decorative circle -->
+                        <div
+                            class="absolute -bottom-4 -right-4 w-16 h-16 rounded-full bg-primary-DEFAULT/20 dark:bg-primary-DEFAULT/10 -z-10">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content (Right) -->
+                <div class="w-full md:w-2/3 text-center md:text-left">
+                    <h1
+                        class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                        Salma Souneini
+                    </h1>
+                    <h2
+                        class="text-xl md:text-2xl text-primary-DEFAULT font-medium mb-6 animate__animated animate__fadeInUp animate__delay-2s">
+                        Software Engineering Student
+                    </h2>
+                    <p
+                        class="max-w-2xl mx-auto md:mx-0 text-gray-600 dark:text-gray-300 mb-8 animate__animated animate__fadeInUp animate__delay-3s">
+                        Passionate about technological challenges and open to learning new skills.
+                        My goal is to contribute to innovative projects that provide concrete solutions.
+                    </p>
+                    <div
+                        class="flex flex-wrap justify-center md:justify-start gap-4 animate__animated animate__fadeInUp animate__delay-4s">
+                        <a href="#contact"
+                            class="px-6 py-3 bg-primary-DEFAULT text-white rounded-lg hover:bg-primary-dark transition shadow-lg hover:shadow-primary-DEFAULT/20">
+                            Contact Me
+                        </a>
+                        <a href="#experience"
+                            class="px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition shadow-lg">
+                            View Experience
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 scroll-section">
+        <div class="container mx-auto">
+            <h2
+                class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white animate__animated animate__zoomIn">
+                About Me</h2>
+            <div class="max-w-3xl mx-auto text-gray-600 dark:text-gray-300 animate__animated animate__zoomIn">
+                <p class="mb-4">
+                    I am a software engineering and Information Systems Integration student passionate about
+                    technological challenges.
+                    I am open to learning new skills and discovering enriching personal and professional experiences.
+                </p>
+                <p>
+                    My goal is to contribute to innovative projects that provide concrete solutions, while evolving in
+                    dynamic and
+                    collaborative environments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-4 bg-gray-100 dark:bg-gray-800/50 scroll-section">
+        <div class="container mx-auto">
+            <h2
+                class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white animate__animated animate__zoomIn">
+                Education</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md animate__animated animate__zoomIn">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Engineering Degree in
+                                Software Engineering</h3>
+                            <p class="text-primary-DEFAULT">2023 - 2025</p>
+                        </div>
+                        <span
+                            class="px-3 py-1 bg-primary-DEFAULT/10 text-primary-DEFAULT rounded-full text-sm">Current</span>
+                    </div>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Software Engineering and Information Systems
+                        Integration</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md animate__animated animate__zoomIn">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">DUT in Computer Science</h3>
+                            <p class="text-primary-DEFAULT">2021 - 2023</p>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Ecole Supérieure De Technologie Beni Mellal</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md animate__animated animate__zoomIn">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Baccalaureate in Physical
+                                and Chemical Sciences</h3>
+                            <p class="text-primary-DEFAULT">2020 - 2021</p>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Lycée Ibn Tofail Oued Zem</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4 scroll-section">
+        <div class="container mx-auto">
+            <h2
+                class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white animate__animated animate__zoomIn">
+                Experience</h2>
+            <div class="max-w-3xl mx-auto space-y-12">
+                <div class="relative animate__animated animate__zoomIn">
+                    <div class="absolute top-0 left-6 h-full w-0.5 bg-primary-DEFAULT/20"></div>
+                    <div class="relative flex items-start">
+                        <div
+                            class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-DEFAULT flex items-center justify-center text-white shadow-lg">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="ml-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-full">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Second Year Internship</h3>
+                            <p class="text-primary-DEFAULT mb-2">June 2022 - July 2022</p>
+                            <p class="text-gray-600 dark:text-gray-300 mb-2">OCP Khouribga</p>
+                            <p class="text-gray-700 dark:text-gray-200 font-medium mb-2">Integrated Solution for
+                                Equipment Monitoring and Tracking</p>
+                            <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                                <li>Created a mobile application for technicians to scan equipment QR codes and input
+                                    their status</li>
+                                <li>Developed a desktop application for administrative staff to view equipment status in
+                                    real-time</li>
+                                <li>Ensured interaction between both applications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative animate__animated animate__zoomIn">
+                    <div class="absolute top-0 left-6 h-full w-0.5 bg-primary-DEFAULT/20"></div>
+                    <div class="relative flex items-start">
+                        <div
+                            class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-DEFAULT flex items-center justify-center text-white shadow-lg">
+                            <i class="fa-solid fa-file-code"></i>
+                        </div>
+                        <div class="ml-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-full">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Final Year Project</h3>
+                            <p class="text-primary-DEFAULT mb-2">April 2022 - June 2022</p>
+                            <p class="text-gray-700 dark:text-gray-200 font-medium mb-2">Human Resources Management
+                                Platform</p>
+                            <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                                <li>Developed a human resources management platform for employee management, leave
+                                    management, and administrative processes</li>
+                                <li>Integrated HR data analysis features for informed decision-making</li>
+                                <li>Created a user-friendly interface for easy navigation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative animate__animated animate__zoomIn">
+                    <div class="relative flex items-start">
+                        <div
+                            class="flex-shrink-0 h-12 w-12 rounded-full bg-primary-DEFAULT flex items-center justify-center text-white shadow-lg">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <div class="ml-6 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md w-full">
+                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Introductory Internship</h3>
+                            <p class="text-primary-DEFAULT mb-2">June 2021</p>
+                            <p class="text-gray-600 dark:text-gray-300 mb-2">Commune of Oued Zem</p>
+                            <p class="text-gray-700 dark:text-gray-200 font-medium mb-2">Development of an Extension for
+                                the "Rokhasse" Application</p>
+                            <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                                <li>Participated in developing an extension for the "Rokhssa" application that allows
+                                    citizens to track the progress of their files</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 bg-gray-100 dark:bg-gray-800/50 scroll-section">
+        <div class="container mx-auto">
+            <h2
+                class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white animate__animated animate__zoomIn">
+                Skills & Expertise</h2>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md animate__animated animate__zoomIn">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Technical Skills</h3>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-200">Object-Oriented Programming (Java,
+                                    C++)</span>
+                                <span class="text-primary-DEFAULT">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary-DEFAULT h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-200">Frameworks (React Native, Node.js,
+                                    Laravel, JEE)</span>
+                                <span class="text-primary-DEFAULT">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary-DEFAULT h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-200">Databases (MySQL, Oracle)</span>
+                                <span class="text-primary-DEFAULT">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary-DEFAULT h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-200">Web Development (HTML, CSS, JavaScript,
+                                    PHP)</span>
+                                <span class="text-primary-DEFAULT">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary-DEFAULT h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-200">Linux Operating System (Shell)</span>
+                                <span class="text-primary-DEFAULT">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-primary-DEFAULT h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md animate__animated animate__zoomIn">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-white">Soft Skills & Languages</h3>
+
+                    <div class="mb-6">
+                        <h4 class="text-gray-700 dark:text-gray-200 font-medium mb-3">Soft Skills</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-primary-DEFAULT/10 text-primary-DEFAULT rounded-full">Teamwork</span>
+                            <span
+                                class="px-3 py-1 bg-primary-DEFAULT/10 text-primary-DEFAULT rounded-full">Open-mindedness</span>
+                            <span class="px-3 py-1 bg-primary-DEFAULT/10 text-primary-DEFAULT rounded-full">Working
+                                under pressure</span>
+                            <span
+                                class="px-3 py-1 bg-primary-DEFAULT/10 text-primary-DEFAULT rounded-full">Punctuality</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-gray-700 dark:text-gray-200 font-medium mb-3">Languages</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 dark:text-gray-200">French</span>
+                                    <span class="text-primary-DEFAULT">Fluent</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-primary-DEFAULT h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 dark:text-gray-200">English</span>
+                                    <span class="text-primary-DEFAULT">Proficient</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-primary-DEFAULT h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 dark:text-gray-200">Arabic</span>
+                                    <span class="text-primary-DEFAULT">Native</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                    <div class="bg-primary-DEFAULT h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 scroll-section">
+        <div class="container mx-auto">
+            <h2
+                class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white animate__animated animate__zoomIn">
+                Contact Me</h2>
+
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md animate__animated animate__zoomIn">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">Get In Touch</h3>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 h-10 w-10 rounded-full bg-primary-DEFAULT/10 flex items-center justify-center text-primary-DEFAULT">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-gray-700 dark:text-gray-200 font-medium">Email</h4>
+                                <a href="mailto:souneinis@gmail.com"
+                                    class="text-primary-DEFAULT hover:underline">souneinis@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 h-10 w-10 rounded-full bg-primary-DEFAULT/10 flex items-center justify-center text-primary-DEFAULT">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-gray-700 dark:text-gray-200 font-medium">Phone</h4>
+                                <a href="tel:+212693992810" class="text-primary-DEFAULT hover:underline">06 93 99 28
+                                    10</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 h-10 w-10 rounded-full bg-primary-DEFAULT/10 flex items-center justify-center text-primary-DEFAULT">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-gray-700 dark:text-gray-200 font-medium">LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/salma-souneini-784219288/" target="_blank"
+                                    rel="noopener noreferrer" class="text-primary-DEFAULT hover:underline">Salma
+                                    Souneini</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 h-10 w-10 rounded-full bg-primary-DEFAULT/10 flex items-center justify-center text-primary-DEFAULT">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-gray-700 dark:text-gray-200 font-medium">GitHub</h4>
+                                <a href="https://github.com/salmasn" target="_blank" rel="noopener noreferrer"
+                                    class="text-primary-DEFAULT hover:underline">@salmasn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md animate__animated animate__zoomIn">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800 dark:text-white">Send a Message</h3>
+
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-DEFAULT focus:border-primary-DEFAULT bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                placeholder="Your name" required />
+                        </div>
+
+                        <div>
+                            <label for="email"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-DEFAULT focus:border-primary-DEFAULT bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                placeholder="Your email" required />
+                        </div>
+
+                        <div>
+                            <label for="message"
+                                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                            <textarea id="message" rows="4"
+                                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-DEFAULT focus:border-primary-DEFAULT bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                                placeholder="Your message" required></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full px-6 py-3 bg-primary-DEFAULT text-white rounded-lg hover:bg-primary-dark transition shadow-lg hover:shadow-primary-DEFAULT/20">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-800 text-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-4">Salma Souneini</h2>
+            <p class="mb-6">Software Engineering Student</p>
+
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="https://github.com/salmasn" target="_blank" rel="noopener noreferrer"
+                    class="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary-DEFAULT transition">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/salma-souneini-784219288/" target="_blank"
+                    rel="noopener noreferrer"
+                    class="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary-DEFAULT transition">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:souneinis@gmail.com"
+                    class="h-10 w-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary-DEFAULT transition">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+
+            <p class="text-gray-400">&copy; <span id="current-year"></span> Dévloppé Par Abdelkhalek Essaid. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
